@@ -15,7 +15,7 @@ public class BehaviourManager : MonoBehaviour
         mobBehaviors = GetComponents<MyMobBehavior>();
         number = Random.Range(1,3);
         IniInitializeBehaviours();
-        Debug.LogError(number);
+        Debug.Log(number);
     }
 
     private void IniInitializeBehaviours()
