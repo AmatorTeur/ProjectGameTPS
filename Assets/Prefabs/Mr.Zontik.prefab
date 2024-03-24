@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1816609755800185788}
   - component: {fileID: 1875135616934471402}
   - component: {fileID: 363616454967818787}
+  - component: {fileID: 7935181954858341099}
   m_Layer: 0
   m_Name: Mr.Zontik
   m_TagString: Untagged
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cd743476290744cb5bb7bcef2cbbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviours: []
+  mobBehaviors: []
 --- !u!114 &7996355143227050024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d67cc38d0e9c88408ef1758c0a63e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &7935181954858341099
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017369083227047200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 3.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.9, z: 0}
 --- !u!1001 &5841577978081107078
 PrefabInstance:
   m_ObjectHideFlags: 0
