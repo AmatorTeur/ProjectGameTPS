@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class BMX : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public MyBehaviour[] behaviours;
+    public MyMobBehavior[] mobBehaviors;
+
+    private int number;
+
+    private void Start()
     {
-        
+        behaviours = GetComponents<MyBehaviour>();
+        mobBehaviors = GetComponents<MyMobBehavior>();
+        number = Random.Range(1, 3);
+        IniInitializeBehaviours();
+        Debug.Log(number);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void IniInitializeBehaviours()
     {
-        
+        foreach (MyMobBehavior behaviour in mobBehaviors)
+        {
+            behaviour.enabled = false;
+        }
+
+        foreach (MyBehaviour behaviour in behaviours)
+        {
+            behaviour.enabled = false;
+        }
+
+        if (number == 1)
+        {
+            behaviours[Random.Range(0, behaviours.Length)].enabled = true;
+        }
+        else
+        {
+            mobBehaviors[Random.Range(0, behaviours.Length)].enabled = true;
+        }
     }
 }

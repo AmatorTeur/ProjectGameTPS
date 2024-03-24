@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mob_Three_Zontik : MonoBehaviour
+public class Mob_Three_Zontik : Zontic_Mob
 {
     // Start is called before the first frame update
     void Start()
