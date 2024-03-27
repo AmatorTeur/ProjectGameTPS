@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BMX : MonoBehaviour
 {
-    public MyBehaviour[] behaviours;
-    public MyMobBehavior[] mobBehaviors;
+    public XNPC[] behaviours;
+    public XMob[] mobBehaviors;
 
     private int number;
 
     private void Start()
     {
-        behaviours = GetComponents<MyBehaviour>();
-        mobBehaviors = GetComponents<MyMobBehavior>();
+        behaviours = GetComponents<XNPC>();
+        mobBehaviors = GetComponents<XMob>();
         number = Random.Range(1, 3);
         IniInitializeBehaviours();
         Debug.Log(number);
@@ -20,12 +20,12 @@ public class BMX : MonoBehaviour
 
     private void IniInitializeBehaviours()
     {
-        foreach (MyMobBehavior behaviour in mobBehaviors)
+        foreach (XMob behaviour in mobBehaviors)
         {
             behaviour.enabled = false;
         }
 
-        foreach (MyBehaviour behaviour in behaviours)
+        foreach (XNPC behaviour in behaviours)
         {
             behaviour.enabled = false;
         }

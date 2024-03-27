@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7318243488745160357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06, y: 0.45, z: -2.46}
+  m_LocalPosition: {x: 3.06, y: 0.406, z: -2.46}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4136634593432718674}
@@ -78,10 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19ee02901675704c84c75a646e0ad65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  sprint: 10
-  gravity: 9.8
-  jumpForce: 5
+  speed: 5
+  sprint: 5
+  gravity: 15
+  jumpForce: 7
 --- !u!143 &7318243488745160359
 CharacterController:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraAxisTransform: {fileID: 5878601263456940932}
   minAngle: 1
-  maxAngle: 10
+  maxAngle: 30
   _rotationSpeed: 350
 --- !u!1 &7318243488941314128
 GameObject:
@@ -173,7 +173,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

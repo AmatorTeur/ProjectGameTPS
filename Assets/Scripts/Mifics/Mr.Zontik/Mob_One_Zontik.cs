@@ -7,6 +7,8 @@ public class Mob_One_Zontik : Zontic_Mob
 {
     public List<Transform> patrolPoints;
     private NavMeshAgent _navMeshAgent;
+    public float waitTime = 3f;
+    private bool isWait = false;
 
     void Start()
     {
@@ -29,16 +31,23 @@ public class Mob_One_Zontik : Zontic_Mob
     private void PickNewPatrolPoint()
     {
         _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
+        isWait = false;
 
     }
 
     private void PatrolUpdate()
     {
-        if (_navMeshAgent.remainingDistance == 0)
+        if (!_navMeshAgent.pathPending && _navMeshAgent.remainingDistance < 0.5f && !isWait)
         {
-            PickNewPatrolPoint();
+            isWait = true;
+            StartCoroutine(WaitAndPickNewPatrolPoint());
 
         }
+    }
 
+    IEnumerator WaitAndPickNewPatrolPoint()
+    {
+        yield return new WaitForSeconds(waitTime);
+        PickNewPatrolPoint();
     }
 }

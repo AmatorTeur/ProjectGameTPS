@@ -15,7 +15,7 @@ public class BMZontik : MonoBehaviour
         mobBehaviors = GetComponents<Zontic_Mob>();
         number = Random.Range(1, 3);
         IniInitializeBehaviours();
-        Debug.Log(number);
+        Debug.Log("Zontik" + number);
     }
 
     private void IniInitializeBehaviours()
