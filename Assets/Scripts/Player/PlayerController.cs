@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController ck;
     private Vector3 _moveVector;
     private float currentSpeed;
-    //public Animator animator;
+    public Animator animator;
 
     void Start()
     {
@@ -35,18 +35,24 @@ public class PlayerController : MonoBehaviour
         {
             _moveVector += transform.forward;
             run_int = 1;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                currentSpeed = speed + sprint;
+            }
+            else { currentSpeed = speed; }
+
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
-            run_int = 4;
+            run_int = 2;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             _moveVector -= transform.forward;
-            run_int = 2;
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -55,13 +61,9 @@ public class PlayerController : MonoBehaviour
             run_int = 3;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            currentSpeed = speed + sprint;
-        }
-        else { currentSpeed = speed; }
 
-        //animator.SetInteger("run_int", run_int);
+
+        animator.SetInteger("run_int", run_int);
     }
 
     private void JumpUpdate()
